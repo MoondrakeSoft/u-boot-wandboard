@@ -181,10 +181,10 @@
 			"fi; "	\
 		"fi\0" \
 	"mmcargs=setenv bootargs console=${console} " \
-		"${optargs} " \
 		"root=${mmcroot} " \
 		"rootfstype=${mmcrootfstype} " \
-		"${cmdline}\0" \
+		"${cmdline} " \
+		"${optargs}\0" \
 	"videoargs=" \
 		"setenv nextcon 0; " \
 		"if hdmidet; then " \
@@ -245,7 +245,12 @@
 						"setenv fdt_file ${dtb};" \
 						"echo Using: dtb=${fdt_file} ...;" \
 					"fi;" \
-					"echo Checking if uname_r is set in /boot/uEnv.txt...;" \
+					"if test -n ${boot_uname_r}; then "\
+						"echo Forcing uname_r=${boot_uname_r} ...;" \
+						"setenv uname_r ${boot_uname_r};" \
+					"else "\
+						"echo Checking if uname_r is set in /boot/uEnv.txt...;" \
+					"fi;" \
 					"if test -n ${uname_r}; then " \
 						"echo Running uname_boot ...;" \
 						"setenv mmcroot /dev/mmcblk${mmckernel}p${mmcpart} ro;" \
