@@ -201,6 +201,7 @@ config CMD_ARMFLASH
 
 config CMD_NAND
 	bool "nand"
+	depends on SYS_NAND_SELF_INIT
 	help
 	  NAND support.
 
