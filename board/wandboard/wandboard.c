@@ -364,6 +364,10 @@ int board_early_init_f(void)
 #if defined(CONFIG_VIDEO_IPUV3)
 	setup_display();
 #endif
+#ifdef CONFIG_CMD_SATA
+	setup_sata();
+#endif
+
 	return 0;
 }
 
