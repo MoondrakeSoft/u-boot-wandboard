@@ -19,7 +19,7 @@ config RSA_SOFTWARE_EXP
 
 config RSA_FREESCALE_EXP
 	bool "Enable RSA Modular Exponentiation with FSL crypto accelerator"
-	depends on DM && RSA && FSL_CAAM
+	depends on DM && RSA && FSL_CAAM && FIT
 	help
 	Enables driver for RSA modular exponentiation using Freescale cryptographic
 	accelerator - CAAM.
