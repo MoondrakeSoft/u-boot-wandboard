@@ -1,0 +1,11 @@
+config FS_EXT4
+	bool "Enable EXT4 read support"
+	help
+	  Enable EXT4 read-only support
+
+if FS_EXT4
+config EXT4_WRITE
+	bool "Enable EXT4 write support"
+	help
+	  Enable EXT4 read-write support.
+endif

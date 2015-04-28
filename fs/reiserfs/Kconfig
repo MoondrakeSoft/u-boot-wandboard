@@ -1,0 +1,4 @@
+config CMD_REISER
+	bool "Enable ReiserFS support"
+	help
+	  Enable ReiserFS support
