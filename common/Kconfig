@@ -206,6 +206,7 @@ config CMD_NAND
 
 config CMD_SPI
 	bool "sspi"
+	depends on DM_SPI
 	help
 	  SPI utility command.
 
