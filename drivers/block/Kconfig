@@ -1,0 +1,2 @@
+config CMD_SATA
+	bool "Support for SATA"

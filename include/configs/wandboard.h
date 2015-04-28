@@ -87,6 +87,22 @@
 #define CONFIG_MXC_USB_PORTSC		(PORT_PTS_UTMI | PORT_PTS_PTW)
 #define CONFIG_MXC_USB_FLAGS		0
 
+/*
+ * SATA Configs
+ */
+#ifdef CONFIG_CMD_SATA
+#define CONFIG_DWC_AHSATA
+#define CONFIG_SYS_SATA_MAX_DEVICE	1
+#define CONFIG_DWC_AHSATA_PORT_ID	0
+#define CONFIG_DWC_AHSATA_BASE_ADDR	SATA_ARB_BASE_ADDR
+#define CONFIG_LBA48
+#define CONFIG_LIBATA
+#define CONFIG_SATA_ENV_DEV     	0
+#define CONFIG_ENV_IS_IN_SATA
+#else
+#define CONFIG_ENV_IS_IN_MMC
+#endif
+
 /* Ethernet Configuration */
 #define CONFIG_CMD_PING
 #define CONFIG_CMD_DHCP
@@ -274,8 +290,7 @@
 
 #define CONFIG_ENV_SIZE			(8 * 1024)
 
-#define CONFIG_ENV_IS_IN_MMC
-#define CONFIG_ENV_OFFSET		(6 * 64 * 1024)
+#define CONFIG_ENV_OFFSET       	(6 * 64 * 1024)
 #define CONFIG_SYS_MMC_ENV_DEV		0
 
 #define CONFIG_OF_LIBFDT
