@@ -36,6 +36,12 @@ config SYS_VSNPRINTF
 	  Thumb-2, about 420 bytes). Enable this option for safety when
 	  using sprintf() with data you do not control.
 
+config LIB_RAND
+	bool "Enable simple xorshift PRNG"
+	help
+	  Simple xorshift pseudo random number generator.
+	  See http://www.jstatsoft.org/v08/i14
+
 source lib/rsa/Kconfig
 
 menu "Hashing Support"
